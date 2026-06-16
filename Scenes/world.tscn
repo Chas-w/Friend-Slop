@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://det1ev86alinb"]
 
 [ext_resource type="PackedScene" uid="uid://ds25c7icm0guj" path="res://Scenes/player.tscn" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://cavayitgur1we" path="res://Scenes/mp.tscn" id="2_go701"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a02cp"]
 sky_horizon_color = Color(1.202401, 1.3681192, 1.2928836, 1)
@@ -93,21 +94,5 @@ shape = SubResource("BoxShape3D_8j60k")
 [node name="player" parent="." unique_id=1688340974 instance=ExtResource("1_a02cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2506437, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=53957819]
-
-[node name="Join" type="Button" parent="CanvasLayer" unique_id=41165217]
-anchors_preset = -1
-anchor_right = 0.033
-anchor_bottom = 0.048
-offset_right = -30.015999
-offset_bottom = -23.104
-text = "Join"
-
-[node name="Host" type="Button" parent="CanvasLayer" unique_id=1154962891]
-anchors_preset = -1
-anchor_right = 0.033
-anchor_bottom = 0.048
-offset_top = 38.0
-offset_right = 5.984001
-offset_bottom = 37.896
-text = "Host"
+[node name="MP" parent="." unique_id=30169485 instance=ExtResource("2_go701")]
+player_scene = ExtResource("1_a02cp")

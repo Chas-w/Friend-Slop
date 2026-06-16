@@ -32,7 +32,7 @@ func _unhandled_input(event):
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	cam.current = is_multiplayer_authority()
 func _process(delta):
 	if(Input.is_action_just_pressed("free_mouse")):
 		free_mouse = !free_mouse
@@ -40,6 +40,11 @@ func _process(delta):
 			Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
+#multiplayer stuff
+func _enter_tree():
+	set_multiplayer_authority(name.to_int())
 
 
 func _physics_process(delta):
