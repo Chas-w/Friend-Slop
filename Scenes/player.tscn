@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ds25c7icm0guj"]
+
+[ext_resource type="Script" uid="uid://di0l04njfdyel" path="res://Scenes/character_body_3d.gd" id="1_v0iea"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5a7ea"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a02cp"]
+shading_mode = 0
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8j60k"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1688340974 node_paths=PackedStringArray("head", "cam")]
+script = ExtResource("1_v0iea")
+head = NodePath("Head")
+cam = NodePath("Head/Camera3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=446744539]
+mesh = SubResource("CapsuleMesh_5a7ea")
+surface_material_override/0 = SubResource("StandardMaterial3D_a02cp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1077158762]
+shape = SubResource("CapsuleShape3D_8j60k")
+
+[node name="Head" type="Node3D" parent="." unique_id=64025068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1360157, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=431145031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25156176, -0.4836499)
